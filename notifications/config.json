@@ -1,0 +1,23 @@
+{
+  "base": {
+    "logo": "",
+    "project": "Project test",
+    "environment": "Prodaction",
+    "comment": "Test allure notifications",
+    "reportLink": "https://github.com/qa-guru/allure-notifications/blob/master/README.md",
+    "language": "en",
+    "allureFolder": "C:\\Users\\Alex\\AppData\\Local\\Temp\\3777854119974527776\\allure-report\\",
+    "enableChart": true
+  },
+  "mail":
+  {
+    "host": "connect.smtp.bz",
+    "port": "2525",
+    "username": "al@pryaniky.com",
+    "password": "RAcRotjS7Kcp",
+    "securityProtocol": null,
+    "from": "al@pryaniky.com",
+    "recipient": "at@pryaniky.ru"
+  }
+
+}
