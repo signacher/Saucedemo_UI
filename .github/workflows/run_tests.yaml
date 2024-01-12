@@ -1,7 +1,16 @@
 name: Saucedemo UI tests
 
 on:
-  push
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choise target
+        required: true
+        default: all test
+        type: choise
+        options:
+          - all test
+          - second test
 
 jobs:
   test:
@@ -16,7 +25,11 @@ jobs:
           python-versions: "3.10"
       - name: Setup Chrome
         run: sudo apt-get install google-chrome-stable
-      - name: install dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run tests
+      - name: all test
+        if: "github.event.inputs.deploiment_target == 'All test'"
+        run: pytest
+      - name: second test
+        if: "github.event.inputs.deploiment_target == 'second test'"
         run: pytest
