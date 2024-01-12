@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       deployment_target:
-        description: Choise target
+        description: Choise marker tests
         required: true
         default: all test
         type: choise
