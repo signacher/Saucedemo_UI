@@ -74,7 +74,7 @@ jobs:
   publish_report:
     runs-on: ubuntu-latest
     needs: generate_report
-    name: Publication report
+    name: publication report
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
