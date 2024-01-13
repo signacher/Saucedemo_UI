@@ -25,8 +25,12 @@ def setup_driver():
     return driver
 
 
-@pytest.mark.run(order=1)
-@allure.description('Test buy product1')
+@pytest.mark.run(order=2)
+@allure.tag('buy')
+@allure.label('owner', 'Telnov')
+@allure.epic('UI')
+@allure.feature('Покупки')
+@allure.story('Покупка товара "Sauce Labs Backpack"')
 def test_buy_product1(set_up, set_group):
     with allure.step('Открываем браузер'):
         driver = setup_driver()
@@ -54,7 +58,12 @@ def test_buy_product1(set_up, set_group):
     print('Finish test 1')
     driver.quit()
 
-@pytest.mark.run(order=2)
+@pytest.mark.run(order=1)
+@allure.tag('buy')
+@allure.label('owner', 'Telnov')
+@allure.epic('UI')
+@allure.feature('Покупки')
+@allure.story('Покупка товара "2"')
 def test_buy_product2(set_up, set_group):
     driver = setup_driver()
     print('\nStart test 2')
@@ -79,9 +88,14 @@ def test_buy_product2(set_up, set_group):
 
     print('Finish test 2')
     time.sleep(2)
-    driver.close()
+    driver.quit()
 
 
+@allure.tag('menu')
+@allure.label('owner', 'Telnov')
+@allure.epic('UI')
+@allure.feature('Меню')
+@allure.story('Проверка пункта меню About')
 def test_link_about(set_up):
     driver = setup_driver()
 
