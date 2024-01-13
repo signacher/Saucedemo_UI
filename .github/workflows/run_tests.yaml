@@ -35,11 +35,11 @@ jobs:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
       - name: all test
-        if: "github.event.inputs.deploiment_target == 'All test'"
+        if: "github.event.inputs.deployment_target == 'All test'"
         run: pytest
         continue-on-error: true
       - name: second test
-        if: "github.event.inputs.deploiment_target == 'second test'"
+        if: "github.event.inputs.deployment_target == 'second test'"
         run: pytest
         continue-on-error: true
       - name: Store allure results
