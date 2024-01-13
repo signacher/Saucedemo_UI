@@ -7,7 +7,7 @@ on:
         description: Choise marker tests
         required: true
         default: all test
-        type: choise
+        type: choice
         options:
           - all test
           - second test
