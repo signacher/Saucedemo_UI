@@ -65,7 +65,7 @@ def test_buy_product1(set_up, set_group):
 @allure.epic('UI')
 @allure.feature('Покупки')
 @allure.story('Покупка товара "2"')
-@pytest.mark.run(order=2)
+@pytest.mark.run(order=1)
 @pytest.mark.buy
 def test_buy_product2(set_up, set_group):
     driver = setup_driver()
