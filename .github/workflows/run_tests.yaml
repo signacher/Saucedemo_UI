@@ -9,7 +9,7 @@ on:
         default: all test
         type: choice
         options:
-          - All test
+          - All tests
           - Buy tests
 
 permissions: 
@@ -30,7 +30,7 @@ jobs:
           ARTIFACT_ID=$(curl -L 
           -H "Accept: application/vnd.github+json" 
           -H "X-GitHub-Api-Version: 2022-11-28" 
-          "https://api.github.com/repos/signacher/Saucedemo_UI/actions/artifacts?name=allure-results" 
+          "https://api.github.com/repos/signacher/Saucedemo_UI/actions/artifacts?name=allure-results")
           | python -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);") 
           && 
           curl -L 
@@ -78,8 +78,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Download all workflow run artifacts 
         uses: actions/download-artifact@v3
-      - name: all test 
-        if: "github.event.inputs.deployment_target == 'All test'"
+      - name: all tests 
+        if: "github.event.inputs.deployment_target == 'All tests'"
         run: pytest
         continue-on-error: true
       - name: buy tests 
