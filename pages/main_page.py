@@ -77,10 +77,6 @@ class MainPage(Base):
         name_product = product.text
         print(colored('ADD PRODUCT: ' + name_product, 'magenta'))
 
-    def text_select_product_3(self):
-        product = self.get_name_product_3()
-        name_product = product.text
-        print(colored('ADD PRODUCT: ' + name_product, 'magenta'))
 
     def click_select_product_1(self):
         self.get_select_product_1().click()
@@ -90,9 +86,6 @@ class MainPage(Base):
         self.get_select_product_2().click()
         print("Click  Select_product_2")
 
-    def click_select_product_3(self):
-        self.get_select_product_3().click()
-        print("Click  Select_product_3")
 
     def click_cart(self):
         self.get_cart().click()

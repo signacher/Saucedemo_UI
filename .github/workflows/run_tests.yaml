@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       deployment_target:
-        description: Choise marker tests
+        description: Choose marker tests
         required: true
         default: all test
         type: choice
         options:
-          - all test
-          - second test
+          - All test
+          - Buy tests
 
 permissions:
   contents: read
@@ -39,8 +39,8 @@ jobs:
         run: pytest
         continue-on-error: true
       - name: second test
-        if: "github.event.inputs.deployment_target == 'second test'"
-        run: pytest
+        if: "github.event.inputs.deployment_target == 'Buy tests'"
+        run: pytest -m buy
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v3
