@@ -33,7 +33,6 @@ class Payment_page(Base):
     #Methods
 
     def payment(self):
-        with allure.step('Проверяем информацию о стоймости'):
             Logger.add_start_step(method="payment")
             self.get_current_url()
             with allure.step('Нажимаем Finish'):

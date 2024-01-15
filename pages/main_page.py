@@ -105,22 +105,29 @@ class MainPage(Base):
     def select_product1(self):
         Logger.add_start_step(method="select_product1")
         self.get_current_url()
-        self.click_select_product_1()
-        self.text_select_product_1()
-        self.assert_url('https://www.saucedemo.com/inventory.html')
-        self.click_cart()
+        with allure.step('Проверяем товар по тексту'):
+            self.click_select_product_1()
+        with allure.step('Нажимает Add to cart'):
+            self.text_select_product_1()
+        with allure.step('Проверяем URL'):
+            self.assert_url('https://www.saucedemo.com/inventory.html')
+        with allure.step('Кликаем на иконку Корзина'):
+            self.click_cart()
         Logger.add_end_step(url=self.driver.current_url, method="select_product1")
 
 
     def select_product2(self):
-        with allure.step('Select_product Sauce Labs Bike Light'):
-            Logger.add_start_step(method="select_product2")
-            self.get_current_url()
+        Logger.add_start_step(method="select_product2")
+        self.get_current_url()
+        with allure.step('Проверяем товар по тексту'):
             self.text_select_product_2()
+        with allure.step('Нажимает Add to cart'):
             self.click_select_product_2()
+        with allure.step('Проверяем URL'):
             self.assert_url('https://www.saucedemo.com/inventory.html')
+        with allure.step('Кликаем на иконку Корзина'):
             self.click_cart()
-            Logger.add_end_step(url=self.driver.current_url, method="select_product2")
+        Logger.add_end_step(url=self.driver.current_url, method="select_product2")
 
 
     def select_menu_about(self):

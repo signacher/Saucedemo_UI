@@ -43,18 +43,18 @@ def test_buy_product1(set_up, set_group):
     with allure.step('Добавляем в корзину товар "Sauce Labs Backpack"'):
         mp = MainPage(driver)
         mp.select_product1()
-
-    cp = CartPage(driver)
-    cp.product_confirmation()
-
-    cip = Client_infomation_page(driver)
-    cip.input_information()
-
-    p = Payment_page(driver)
-    p.payment()
-
-    f = Finish_page(driver)
-    f.finish()
+    with allure.step('Нажимаем Checkout'):
+        cp = CartPage(driver)
+        cp.product_confirmation()
+    with allure.step('Заполняем информацию о заказчике'):
+        cip = Client_infomation_page(driver)
+        cip.input_information()
+    with allure.step('Проверяем информацию о стоймости заказа'):
+        p = Payment_page(driver)
+        p.payment()
+    with allure.step('Завершаем заказ'):
+        f = Finish_page(driver)
+        f.finish()
 
     print('Finish test 1')
     driver.quit()
@@ -64,7 +64,7 @@ def test_buy_product1(set_up, set_group):
 @allure.label('owner', 'Telnov')
 @allure.epic('UI')
 @allure.feature('Покупки')
-@allure.story('Покупка товара "2"')
+@allure.story('Покупка товара "Sauce Labs Bike Light"')
 @pytest.mark.run(order=1)
 @pytest.mark.buy
 def test_buy_product2(set_up, set_group):
@@ -73,7 +73,7 @@ def test_buy_product2(set_up, set_group):
     with allure.step('Авторизуемся под пользователем "standart user"'):
         login = LoginPage(driver)
         login.authorization_standart_user()
-    with allure.step('Добавляем товар в корзину'):
+    with allure.step('Добавляем товар Sauce Labs Bike Light в корзину'):
         mp = MainPage(driver)
         mp.select_product2()
     with allure.step('Нажимаем Checkout'):
@@ -82,7 +82,7 @@ def test_buy_product2(set_up, set_group):
     with allure.step('Заполняем информацию о заказчике'):
         cip = Client_infomation_page(driver)
         cip.input_information()
-    with allure.step('Заполняем информацию о заказчике'):
+    with allure.step('Проверяем информацию о стоймости заказа'):
         p = Payment_page(driver)
         p.payment()
     with allure.step('Завершаем заказ'):
@@ -105,7 +105,7 @@ def test_link_about(set_up):
     with allure.step('Авторизуемся под пользователем "standart user"'):
         login = LoginPage(driver)
         login.authorization_standart_user()
-    with allure.step('Проверяем перехоl в пунrт меню About"'):
+    with allure.step('Проверяем переход в пункт меню About"'):
         mp = MainPage(driver)
         mp.select_menu_about()
 
