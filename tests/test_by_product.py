@@ -68,29 +68,28 @@ def test_buy_product1(set_up, set_group):
 @pytest.mark.run(order=1)
 @pytest.mark.buy
 def test_buy_product2(set_up, set_group):
-    driver = setup_driver()
-    print('\nStart test 2')
-
-    login = LoginPage(driver)
-    login.authorization_standart_user()
-
-    mp = MainPage(driver)
-    mp.select_product2()
-
-    cp = CartPage(driver)
-    cp.product_confirmation()
-
-    cip = Client_infomation_page(driver)
-    cip.input_information()
-
-    p = Payment_page(driver)
-    p.payment()
-
-    f = Finish_page(driver)
-    f.finish()
+    with allure.step('Открываем браузер'):
+        driver = setup_driver()
+    with allure.step('Авторизуемся под пользователем "standart user"'):
+        login = LoginPage(driver)
+        login.authorization_standart_user()
+    with allure.step('Добавляем товар в корзину'):
+        mp = MainPage(driver)
+        mp.select_product2()
+    with allure.step('Нажимаем Checkout'):
+        cp = CartPage(driver)
+        cp.product_confirmation()
+    with allure.step('Заполняем информацию о заказчике'):
+        cip = Client_infomation_page(driver)
+        cip.input_information()
+    with allure.step('Заполняем информацию о заказчике'):
+        p = Payment_page(driver)
+        p.payment()
+    with allure.step('Завершаем заказ'):
+        f = Finish_page(driver)
+        f.finish()
 
     print('Finish test 2')
-    time.sleep(2)
     driver.quit()
 
 
@@ -101,15 +100,14 @@ def test_buy_product2(set_up, set_group):
 @allure.story('Проверка пункта меню About')
 @pytest.mark.menu
 def test_link_about(set_up):
-    driver = setup_driver()
-
-    print('\nStart test')
-
-    login = LoginPage(driver)
-    login.authorization_standart_user()
-
-    mp = MainPage(driver)
-    mp.select_menu_about()
+    with allure.step('Открываем браузер'):
+        driver = setup_driver()
+    with allure.step('Авторизуемся под пользователем "standart user"'):
+        login = LoginPage(driver)
+        login.authorization_standart_user()
+    with allure.step('Проверяем перехоl в пунrт меню About"'):
+        mp = MainPage(driver)
+        mp.select_menu_about()
 
     print('Finish test')
     driver.quit()

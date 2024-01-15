@@ -33,10 +33,11 @@ class Payment_page(Base):
     #Methods
 
     def payment(self):
-        with allure.step('Hayment'):
+        with allure.step('Проверяем информацию о стоймости'):
             Logger.add_start_step(method="payment")
             self.get_current_url()
-            self.click_finish_button()
+            with allure.step('Нажимаем Finish'):
+                self.click_finish_button()
             Logger.add_end_step(url=self.driver.current_url, method="payment")
 
 

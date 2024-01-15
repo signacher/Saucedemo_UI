@@ -124,11 +124,12 @@ class MainPage(Base):
 
 
     def select_menu_about(self):
-        with allure.step('Select menu About'):
             Logger.add_start_step(method="select_menu_about")
             self.get_current_url()
-            self.click_menu()
-            self.click_link_about()
+            with allure.step('Кликаем по меню'):
+                self.click_menu()
+            with allure.step('Кликаем по пункту меню About'):
+                self.click_link_about()
             self.assert_url('https://saucelabs.com/')
             Logger.add_end_step(url=self.driver.current_url, method="select_menu_about")
 
