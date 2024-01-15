@@ -112,4 +112,10 @@ def test_link_about(set_up):
     print('Finish test')
     driver.quit()
 
+@allure.epic('UI')
+@allure.story('Падающий тест для красивого отчета')
+def test_failed():
+    with allure.step('Проверяем что 3 равно 2'):
+        assert 3 == 2
+
 
