@@ -94,7 +94,6 @@ def test_buy_product2(set_up, set_group):
 
 
 @allure.tag('menu')
-@allure.label('owner', 'Telnov')
 @allure.epic('UI')
 @allure.feature('Меню')
 @allure.story('Проверка пункта меню About')
