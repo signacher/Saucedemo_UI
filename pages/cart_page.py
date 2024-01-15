@@ -37,11 +37,10 @@ class CartPage(Base):
     #Methods
 
     def product_confirmation(self):
-        with allure.step('Product confirmation'):
-            Logger.add_start_step(method="product_confirmation")
-            self.get_current_url()
-            self.click_checkout_button()
-            Logger.add_end_step(url=self.driver.current_url, method="product_confirmation")
+        Logger.add_start_step(method="product_confirmation")
+        self.get_current_url()
+        self.click_checkout_button()
+        Logger.add_end_step(url=self.driver.current_url, method="product_confirmation")
 
 
 
