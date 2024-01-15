@@ -7,6 +7,7 @@
 ## :open_book: Содержание:
 - [Описание проекта](#heavy_check_mark-описание)
 - [Технологии и инструменты](#gear-технологии-и-инструменты)
+- [Реализованные проверки](#ballot_box_with_check-реализованные-проверки)
 - [Как запускать тесты](#on-как-запускать-тесты)
 - [Allure отчет](#bar_chart-allure-отчет-о-прохождении-тестов)
   
@@ -18,7 +19,6 @@
 >- Формируется <code>Allure отчет</code> о результатах прохождения тестов с историей запусков публикуется в <code>Github Pages</code> <a target="_blank" href="https://signacher.github.io/saucedemo_ui"> Ссылка на отчет</a>
 
 ## :gear: Технологии и инструменты:
-
 <div align="center">
   <img src="https://github.com/signacher/signacher/blob/main/images/python.png" title="Python" alt="Python" width="40" height="40"/>&nbsp;
   <img src="https://github.com/signacher/signacher/blob/main/images/pycharm.png" title="Pycharm" alt="Pycharm" width="40" height="40"/>&nbsp;
@@ -29,6 +29,10 @@
   <img src="https://github.com/signacher/signacher/blob/main/images/yaml.png" title="yaml" alt="yaml" width="40" height="40"/>&nbsp;
   <img src="https://github.com/signacher/signacher/blob/main/images/allure.png" title="Allure" alt="Allure" width="40" height="40"/>&nbsp;
 </div>
+
+## :ballot_box_with_check: Реализованные проверки:
+- [x] vj;tn gbcfnm
+- [x]
 
 ## :on: Как запускать тесты:
 
