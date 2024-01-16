@@ -1,6 +1,6 @@
 <table width="100%" border='0'>
- <tr><td width="20%" valign="bottom"><img src="https://github.com/signacher/signacher/blob/main/images/saucedemo.png" title="shop" alt="Saucedemo" width="200" height="200"/></td><td valign="middle">
- <h1>Пример организации автотестирования для онлайн магазина <a target="_blank" href="https://www.saucedemo.com/">www.saucedemo.com</a></h1>
+ <tr><td width="30%" valign="bottom"><img src="https://github.com/signacher/signacher/blob/main/images/saucedemo.png" title="shop" alt="Saucedemo" width="200" height="200"/></td><td valign="middle">
+ <h2>Пример организации автотестирования для онлайн магазина <a target="_blank" href="https://www.saucedemo.com/">www.saucedemo.com</a></h2>
  </td></tr>
 </table>
 
