@@ -55,8 +55,6 @@ def test_buy_product1(set_up, set_group):
     with allure.step('Завершаем заказ'):
         f = Finish_page(driver)
         f.finish()
-
-    print('Finish test 1')
     driver.quit()
 
 
@@ -88,8 +86,6 @@ def test_buy_product2(set_up, set_group):
     with allure.step('Завершаем заказ'):
         f = Finish_page(driver)
         f.finish()
-
-    print('Finish test 2')
     driver.quit()
 
 
@@ -107,8 +103,6 @@ def test_link_about(set_up):
     with allure.step('Проверяем переход в пункт меню About"'):
         mp = MainPage(driver)
         mp.select_menu_about()
-
-    print('Finish test')
     driver.quit()
 
 @allure.epic('UI')
