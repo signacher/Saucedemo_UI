@@ -31,8 +31,10 @@
 </div>
 
 ## :ballot_box_with_check: Реализованные проверки:
-- [x] vj;tn gbcfnm
-- [x]
+- [x] Сценарий покупки товара "Sauce Labs Backpack"
+- [x] Сценарий покупки товара Sauce Labs Bike Light
+- [x] Проверка перехода в пункт меню About
+- [x] Заведомо падающий тест (для красивого отчета)
 
 ## :on: Как запускать тесты:
 
@@ -47,6 +49,9 @@
 ![Screen Actions1](images/run_actions.png)
 
 ## :bar_chart: Allure отчет о прохождении тестов
+
+Очтет о прохождении теста доступен по ссылке <a target="_blank" href="https://signacher.github.io/saucedemo_ui"> https://signacher.github.io/saucedemo_ui/</a>
+
 
 
 
