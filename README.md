@@ -62,9 +62,9 @@
 >- [x] <code><strong>*FEATURES BY STORIES*</strong></code> - отображает распределение тестов по функционалу, который они проверяют
 
 ###### Главный экран (Owerwiev)
-![Screen Allure1](images/AllureReport1.jpg)
+![Screen Allure1](images/AllureReport1.png)
 ###### Пример описания шагов теста
-![Screen Allure2](images/AllureReport2.jpg)
+![Screen Allure2](images/AllureReport2.png)
 
 
 
