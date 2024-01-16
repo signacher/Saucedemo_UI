@@ -105,14 +105,14 @@ def test_link_about(set_up):
         mp.select_menu_about()
     driver.quit()
 
-@allure.epic('UI')
+@allure.epic('Others')
 @allure.story('Падающий тест для красивого отчета')
 def test_failed():
     with allure.step('Проверяем что 3 равно 2'):
         assert 3 == 2
 
 
-@allure.epic('UI')
+@allure.epic('Others')
 @allure.story('Пропущенный тест для красивого отчета')
 @pytest.mark.skip
 def test_failed():
