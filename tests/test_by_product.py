@@ -118,3 +118,9 @@ def test_failed():
         assert 3 == 2
 
 
+@allure.epic('UI')
+@allure.story('Пропущенный тест для красивого отчета')
+@pytest.mark.skip
+def test_failed():
+    with allure.step('Проверяем что 2 равно 2'):
+        assert 2 == 2
