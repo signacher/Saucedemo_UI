@@ -50,7 +50,16 @@
 
 ## :bar_chart: Allure отчет о прохождении тестов
 
-Очтет о прохождении теста доступен по ссылке <a target="_blank" href="https://signacher.github.io/saucedemo_ui"> https://signacher.github.io/saucedemo_ui/</a>
+Отчет о прохождении теста доступен по ссылке <a target="_blank" href="https://signacher.github.io/saucedemo_ui"> https://signacher.github.io/saucedemo_ui/</a>
+*Главная страница Allure-отчета содержит следующие информационные блоки:*
+
+> - [x] <code><strong>*ALLURE REPORT*</strong></code> - отображает дату и время прохождения теста, общее количество прогнанных кейсов, а также диаграмму с указанием процента и количества успешных, упавших и сломавшихся в процессе выполнения тестов
+>- [x] <code><strong>*TREND*</strong></code> - отображает тренд прохождения тестов от сборки к сборке
+>- [x] <code><strong>*SUITES*</strong></code> - отображает распределение результатов тестов по тестовым наборам
+>- [x] <code><strong>*CATEGORIES*</strong></code> - отображает распределение неуспешно прошедших тестов по видам дефектов
+>- [x] <code><strong>*FEATURES BY STORIES*</strong></code> - отображает распределение тестов по функционалу, который они проверяют
+
+
 
 
 
