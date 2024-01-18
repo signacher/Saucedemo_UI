@@ -26,37 +26,34 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      - run: > 
+      - run: >
           ARTIFACT_ID=$(curl -L 
           -H "Accept: application/vnd.github+json" 
           -H "X-GitHub-Api-Version: 2022-11-28" 
-          https://api.github.com/repos/signacher/saucedemo_ui/actions/artifacts?name=allure-results 
+          "https://api.github.com/repos/senior-tester/run-tests-demo/actions/artifacts?name=allure-results" 
           | python -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);") 
           &&
           curl -L 
           -H "Accept: application/vnd.github+json" 
           -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
           -H "X-GitHub-Api-Version: 2022-11-28" 
-          https://api.github.com/repos/signacher/saucedemo_ui/actions/artifacts/$ARTIFACT_ID/zip 
+          https://api.github.com/repos/senior-tester/run-tests-demo/actions/artifacts/$ARTIFACT_ID/zip 
           -o artifacts.zip &&
           REPORT_ID=$(curl -L 
           -H "Accept: application/vnd.github+json" 
           -H "X-GitHub-Api-Version: 2022-11-28" 
-          https://api.github.com/repos/signacher/saucedemo_ui/actions/artifacts?name=github-pages 
+          "https://api.github.com/repos/senior-tester/run-tests-demo/actions/artifacts?name=github-pages" 
           | python -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);") 
           &&
           curl -L 
           -H "Accept: application/vnd.github+json" 
           -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
           -H "X-GitHub-Api-Version: 2022-11-28" 
-          https://api.github.com/repos/signacher/saucedemo_ui/actions/artifacts/$REPORT_ID/zip 
+          https://api.github.com/repos/senior-tester/run-tests-demo/actions/artifacts/$REPORT_ID/zip 
           -o pages.zip
       - run: mkdir allure-results && unzip artifacts.zip -d allure-results
       - run: mkdir old_pages pages_history && unzip pages.zip -d old_pages && tar -xvf old_pages/artifact.tar -C pages_history
       - run: cp pages_history/history/* allure-results && cp -r pages_history/history allure-results
-      - run: echo "Browser=CHROME" > ./allure-results/environment.properties
-      - run: echo "BrowserVersion=117" >> ./allure-results/environment.properties
-      - run: echo "Stand=Production" >> ./allure-results/environment.properties
       - name: Store allure history
         uses: actions/upload-artifact@v3
         with:
@@ -64,6 +61,7 @@ jobs:
           path:
             allure-results
           retention-days: 1
+       
   
   test:
     runs-on: ubuntu-latest
