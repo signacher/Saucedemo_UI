@@ -12,6 +12,11 @@ on:
           - All tests
           - Buy tests
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   #download-history:
   #  runs-on: ubuntu-latest
@@ -75,24 +80,24 @@ jobs:
         run: sudo apt-get install google-chrome-stable
       - name: Install dependencies
         run: pip install -r requirements.txt
-      #- name: Download all workflow run artifacts
-       # uses: actions/download-artifact@v3
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v3
       - name: all tests
         if: "github.event.inputs.deployment_target == 'All tests'"
-        run: pytest --alluredir=allure-results
+        run: pytest
         continue-on-error: true
       - name: buy tests
         if: "github.event.inputs.deployment_target == 'Buy tests'"
         
-        run: pytest -m buy --alluredir=allure-results
+        run: pytest -m buy
         continue-on-error: true
-      #- name: Store allure results
-       # uses: actions/upload-artifact@v3
-      #  with:
-       #   name: allure-results
-       #   path:
-       #     allure-results
-       #   retention-days: 1
+      - name: Store allure results
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path:
+            allure-results
+          retention-days: 1
           
       - name: Get Allure history
         uses: actions/checkout@v2
